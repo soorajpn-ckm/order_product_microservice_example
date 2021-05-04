@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/product")
+@RequestMapping("/api/productStock")
 public class ProductStockController {
 
     @Autowired
@@ -20,16 +20,16 @@ public class ProductStockController {
     }
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Integer id){
-
+          productStockRepo.deleteById(id);
     }
     @PutMapping("/update")
     public ProductStock update(@RequestBody ProductStock product){
 
-        return null;
+        return  productStockRepo.save(product);
     }
-    @GetMapping("/findById/{}")
+    @GetMapping("/findById/{id}")
     public ProductStock create(@PathVariable Integer id){
-
+        System.out.println("Find by id : "+id);
         return productStockRepo.findById(id).get();
     }
 }
