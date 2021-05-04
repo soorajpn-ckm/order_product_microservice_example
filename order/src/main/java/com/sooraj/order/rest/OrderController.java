@@ -14,12 +14,12 @@ public class OrderController {
 
     @PostMapping("/create")
     public Order createOrder(@RequestBody Order order){
-        order.getProducts().forEach(product -> product.setOrder(order));
+        //order.getProducts().forEach(product -> product.setOrder(order));
         return  orderRepo.save(order);
     }
     @PutMapping("/update")
     public Order updateOrder(@RequestBody Order order){
-        order.getProducts().forEach(product -> product.setOrder(order));
+       // order.getProducts().forEach(product -> product.setOrder(order));
         return  orderRepo.save(order);
     }
     @GetMapping("/findById/{id}")
