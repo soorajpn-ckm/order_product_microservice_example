@@ -32,4 +32,8 @@ public class ProductStockController {
         System.out.println("Find by id : "+id);
         return productStockRepo.findById(id).get();
     }
+    @GetMapping("/test")
+    public String test(){
+        return "Product stock microservice working";
+    }
 }

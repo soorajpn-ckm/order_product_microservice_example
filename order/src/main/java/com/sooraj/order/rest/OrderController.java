@@ -35,7 +35,7 @@ public class OrderController {
     }
     @GetMapping("/test")
     public String test(){
-        return  "helo world";
+        return  "Order service working";
 
     }
 
